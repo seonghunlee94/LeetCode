@@ -14,8 +14,10 @@ class Solution:
         # two pointer로 left right. 기준 인덱스.
         for i in range(0, len(nums) -2):
             
+            # left와 right가 같지 않을 때
             while left_idx != right_idx:
-
+                
+                # 삼중합이 0보다 크거나 같으면 left += 1, 작으면 right -= 1
                 sum = nums[i] + nums[left_idx] + nums[right_idx]
                 if  sum < 0:
                     left_idx += 1
@@ -27,18 +29,18 @@ class Solution:
             left_idx = i + 2
             right_idx = len(nums)-1
 
+        # output [[-1,-1,2],[-1,0,1]]
         return answer
         
         
         
-        # left - right가 같은 인덱스를 가리키면 break
-        # 삼중합이 0보다 크거나 같으면 left += 1
-        # 작으면 right -= 1
-        # 
+        
+        
+
         
         
         
         
-        # output [[-1,-1,2],[-1,0,1]]
+        
 
 
