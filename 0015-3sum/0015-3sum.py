@@ -1,46 +1,18 @@
 class Solution:
-                        
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        # 정렬
-        nums = sorted(nums)
+        nums.sort()
+        result = set()
         
-        # 정렬 시키면, [-4, -1, -1, 0, 1, 2]
-        # print(nums)
-        left_idx = 1
-        right_idx = len(nums)-1 
-        answer = set()
-        sum = 0
-        
-        # two pointer로 left right. 기준 인덱스.
-        for i in range(0, len(nums) -2):
-            
-            # left와 right가 같지 않을 때
-            while left_idx != right_idx:
-                
-                # 삼중합이 0보다 크거나 같으면 left += 1, 작으면 right -= 1
-                sum = nums[i] + nums[left_idx] + nums[right_idx]
-                if  sum < 0:
+        for i in range(len(nums)):
+            left_idx, right_idx = i + 1, len(nums) - 1
+            while left_idx < right_idx:
+                if nums[i] + nums[left_idx] + nums[right_idx] == 0:
+                    result.add((nums[i], nums[left_idx], nums[right_idx]))
                     left_idx += 1
-                elif sum > 0:
                     right_idx -= 1
-                else:
-                    answer.add((nums[i],nums[left_idx],nums[right_idx]))
+                elif nums[i] + nums[left_idx] + nums[right_idx] < 0:
                     left_idx += 1
-            left_idx = i + 2
-            right_idx = len(nums)-1
-
-        # output [[-1,-1,2],[-1,0,1]]
-        return answer
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
-
-
+                else:
+                    right_idx -= 1
+        return result
+                
