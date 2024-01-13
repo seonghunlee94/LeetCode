@@ -1,11 +1,7 @@
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        char_dict = {char: 0 for char in jewels}
-        count = 0
-        
-        for stone in stones:
-            if stone in char_dict:
-                count += 1
-                
-        return count
-                
+        num = 0
+        for i in range(len(stones)):
+            if stones[i] in jewels:
+               num += 1 
+        return num
