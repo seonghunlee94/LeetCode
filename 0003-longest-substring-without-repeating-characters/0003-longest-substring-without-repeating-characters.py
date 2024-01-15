@@ -1,14 +1,32 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        char_index = {}  # 문자의 인덱스를 저장하는 딕셔너리
-        max_length = 0
-        start = 0
+        # 반복되는 문자열이 가장 긴 텍스트 리턴
+        # 투포인트 - index와 start 변수로 비교
+        # 비교하기 위해서 hash table 생성 - used = {}
+        # 최대값 maxlangth 변수 생성
+        
+        # for index, char in enumerate(s) 
+        
+        
+        # 1. 투 포인트로 같은 문자가 들어 왔는지 확인.
+        # used 있으면 - 반복되는 문자. used[char] = start + 1
+        # used 없으면 - 새로운 문자. 
+        # 최대값 갱신 = max(maxlength, index - start + 1 )
 
-        for end, char in enumerate(s):
-            if char in char_index and char_index[char] >= start:
-                start = char_index[char] + 1  # 중복된 문자의 인덱스보다 한 칸 뒤부터 시작
+        
+        # 최신화 used[char] = index
 
-            char_index[char] = end  # 문자의 인덱스를 저장
-            max_length = max(max_length, end - start + 1)  # 최대 부분 문자열의 길이 갱신
-
-        return max_length
+        used = {}
+        maxlength = start = 0
+        
+        for index, char in enumerate(s):
+            # 해시테이블은 in으로 조회
+            if char in used and used[char] >= start:
+                start = used[char] + 1
+            else:
+                maxlength = max(maxlength, index - start + 1)
+                
+                
+            used[char] = index
+            
+        return maxlength
