@@ -5,27 +5,33 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        
-        
         if not list1 and not list2:
             return None
-    
-        dummy = ListNode(0)
-        current = dummy
-
+        
+        new_head = ListNode(0)
+        current = new_head
+        
+        # 두 리스트가 둘 다 있을 경우
         while list1 and list2:
-            if list1.val <= list2.val:
-                current.next = list1
+            
+            if list1.val < list2.val:
+                # 기존에 있던 연결 리스트에서 떼어냈기에, 새로운 노드로 만든 후 연결해줘야 함.
+                current.next = ListNode(list1.val)
                 list1 = list1.next
             else:
-                current.next = list2
+                current.next = ListNode(list2.val)
                 list2 = list2.next
-
             current = current.next
-
+            
+            
+        # list1만 리스트만 남았을 경우.
         if list1:
+            # 연결리스트에 연결리스트를 연결하는 작업이라 리스트 이름 자체를 넣으면 됨.
             current.next = list1
-        elif list2:
+        
+        
+        # list2만 리스트만 남았을 경우.
+        if list2:
             current.next = list2
-
-        return dummy.next
+            
+        return new_head.next
