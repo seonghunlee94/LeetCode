@@ -1,4 +1,4 @@
 class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
-        max_two = heapq.nlargest(2,list(nums))
-        return (max_two[0] - 1) * (max_two[1] - 1)
+    def maxProduct(self, nums: List[int]) -> int:        
+        nums.sort()
+        return (nums[-1] - 1) * (nums[-2] - 1)
