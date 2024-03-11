@@ -9,4 +9,3 @@ class Solution:
             anagrams[sorted_word].append(word)
             
         return list(anagrams.values())
-        # return [anagram_gruop for anagram_gruop in anagrams.values()]
