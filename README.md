@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0817-design-hashmap](https://github.com/seonghunlee94/LeetCode/tree/master/0817-design-hashmap) |
+| [0882-peak-index-in-a-mountain-array](https://github.com/seonghunlee94/LeetCode/tree/master/0882-peak-index-in-a-mountain-array) |
 ## Hash Table
 |  |
 | ------- |
@@ -37,4 +38,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1557-check-if-a-string-contains-all-binary-codes-of-size-k](https://github.com/seonghunlee94/LeetCode/tree/master/1557-check-if-a-string-contains-all-binary-codes-of-size-k) |
+## Binary Search
+|  |
+| ------- |
+| [0882-peak-index-in-a-mountain-array](https://github.com/seonghunlee94/LeetCode/tree/master/0882-peak-index-in-a-mountain-array) |
 <!---LeetCode Topics End-->
